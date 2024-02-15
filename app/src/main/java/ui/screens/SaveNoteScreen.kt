@@ -1,6 +1,7 @@
 package ui.screens
 
 import android.annotation.SuppressLint
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -73,6 +74,16 @@ fun SaveNoteScreen(viewModel: MainViewModel){
     val moveNoteToTrashDialogShownState: MutableState<Boolean> = rememberSaveable{
         mutableStateOf(false)
     }
+
+    BackHandler(
+        onBack = {
+            if(bottomDrawerState.isOpen){
+                coroutineScope.launch{ bottomDrawerState.close()}
+            } else{
+                NotesRouter.navigateTo(Screen.Notes)
+            }
+        }
+    )
 
     Scaffold (
         topBar = {
