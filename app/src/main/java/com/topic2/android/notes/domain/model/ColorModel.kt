@@ -11,7 +11,8 @@ data class ColorModel(
   val hex: String
 ) {
 
-  companion object {
+
+    companion object {
 
     val DEFAULT = with(ColorDbModel.DEFAULT_COLOR) { ColorModel(id, name, hex) }
   }
