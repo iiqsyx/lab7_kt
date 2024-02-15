@@ -156,6 +156,18 @@ fun ColorItem(
 
 @Preview
 @Composable
+fun SaveNoteTopAppBarPreview(){
+    SaveNoteTopAppBar(
+        isEditingMode = true,
+        onBackClick = { /*TODO*/ },
+        onSaveNoteClick = { /*TODO*/ },
+        onOpenColorPickerClick = { /*TODO*/ },
+        onDeleteNoteClick = {}
+    )
+
+}
+@Preview
+@Composable
 fun ColorItemPreview(){
     ColorItem(ColorModel.DEFAULT){}
 }
